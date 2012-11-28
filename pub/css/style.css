@@ -1,25 +1,86 @@
-/* STRUCTURE */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* buttons */
 .btn {
-    background-repeat: repeat-x;
-    border-image: none;
+    color: #025ec7;
+    background: #F5F5F5 linear-gradient(to bottom, #EDEDED, #D2D2D2) repeat-x;
+    border:1px solid #d8d8d8;
     border-radius: 4px 4px 4px 4px;
-    border-style: solid;
-    border-width: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     display: inline-block;
-    font:bold 14px arial;
-    line-height: 20px;
+    font:bold 14px/20px arial;
     margin-bottom: 0;
     padding: 4px 19px;
     text-align: center;
     text-decoration: none;
+    text-shadow: 0 0 4px #F5F5F5;
     vertical-align: middle;
 }
+    btn:hover {
+        background-image: linear-gradient(to bottom, #f7f7f7, #e3e3e3);
+    }
+    .btn:focus {
+        outline: 0 none transparent;
+    }
 .btn.disabled {
     opacity: 0.5;
+    filter: alpha(opacity=50);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     cursor: default;
 }
-.btn-secondary {}
+    .btn.disabled:hover {
+        background-image: linear-gradient(to bottom, #EDEDED, #D2D2D2);
+    }
 
 .btn-large {
     padding: 4px 19px;
@@ -28,25 +89,92 @@
 .btn-small {}
 .btn-mini {}
 
-/* COLORS */
-.btn {
-    background-color: #F5F5F5;
-    background-image: linear-gradient(to bottom, #EDEDED, #D2D2D2);
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #D8D8D8;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-    color: #025ec7;
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
-}
-    .btn:hover {
-        background-image: linear-gradient(to bottom, #f7f7f7, #e3e3e3);
-    }
+
 .btn-primary {
     background-image: linear-gradient(to bottom, #36b8ed, #1086c0);
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #4c9dc5;
     color: #FFFFFF;
-    text-shadow: 0 1px 1px rgba(31, 141, 197, 0.75);
+    text-shadow: 0 0 4px #4C9DC5;
 }
     .btn-primary:hover {
         background-image: linear-gradient(to bottom, #70c9ee, #2b9ad1);
         text-shadow: 0 1px 1px rgba(70, 159, 206, 0.75);
     }
+
+/* form */
+label {
+    color: #4f4f4f;
+    padding: 0 0 2px 0;
+    display: block;
+    font: normal 14px Arial;
+}
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    padding:5px;
+    margin: 0;
+    min-height:24px;
+    border:1px solid #bcc6d0;
+    border-radius:4px 4px 4px 4px;
+    -webkit-box-shadow:0 2px 2px #DDD inset;
+    -moz-box-shadow:0 2px 2px #DDD inset;
+    box-shadow:0 2px 2px #DDD inset;
+    font:normal 14px/20px Arial;
+    color: #4f4f4f;
+}
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    textarea:focus {
+        -webkit-box-shadow: 0px 0px 8px #9ec6e5;
+        -moz-box-shadow:0px 0px 8px #9ec6e5;
+        box-shadow:0px 0px 8px #9ec6e5;
+    }
+input[readonly="readonly"] {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+}
+    input[readonly="readonly"]:focus {
+        -webkit-box-shadow: 0 2px 2px #DDD inset;
+        -moz-box-shadow: 0 2px 2px #DDD inset;
+        box-shadow: 0 2px 2px #DDD inset;
+    }
+
+div.alert label {color:#cc860d;}
+
+div.alert input[type="text"], 
+div.alert input[type="password"],
+div.alert textarea {
+    border-color:#f5b100;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+}
+div.alert input[type="text"]:focus,
+div.alert input[type="password"]:focus,
+div.alert textarea:focus {
+    -webkit-box-shadow: 0px 0px 8px #f6c33e;
+    -moz-box-shadow:0px 0px 8px #f6c33e;
+    box-shadow:0px 0px 8px #f6c33e;
+}
+
+div.error label {color:#d3161d;}
+
+div.error input[type="text"],
+div.error input[type="password"],
+div.error textarea {
+    border-color:#f40e1a;
+    -webkit-transition: all 2s linear;
+    -moz-transition: all 2s linear;
+    -o-transition: all 2s linear;
+    transition: all 2s linear;
+}
+div.error input[type="text"]:focus,
+div.error input[type="password"]:focus,
+div.error textarea:focus {
+    -webkit-box-shadow: 0px 0px 8px #f53842;
+    -moz-box-shadow:0px 0px 8px #f53842;
+    box-shadow:0px 0px 8px #f53842;
+}
