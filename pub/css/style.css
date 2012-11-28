@@ -66,7 +66,7 @@ table {
     text-shadow: 0 0 4px #F5F5F5;
     vertical-align: middle;
 }
-    btn:hover {
+    .btn:hover {
         background-image: linear-gradient(to bottom, #f7f7f7, #e3e3e3);
     }
     .btn:focus {
